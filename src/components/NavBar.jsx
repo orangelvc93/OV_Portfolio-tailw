@@ -26,13 +26,14 @@ const NavBar = () => {
 					</button>
 					<ul className=" gap-4 hidden sm:flex">
 						{navLinks.map((link, id) => (
-							<li
+							<a
 								className=" relative text-white group flex items-center cursor-pointer "
 								key={link.id}
+								href={link.href}
 							>
 								{link.name}
 								<span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-primary to-transparent rounded-md opacity-0 transform -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></span>
-							</li>
+							</a>
 						))}
 						<button className="text-white bg-gradient-to-r from-primary to-primary-light hover:bg-none transition hover:outline hover:outline-2 hover:outline-primary hover:text-purple-300  rounded-md px-3 py-1 uppercase font-bold ">
 							Contáctame
@@ -65,13 +66,15 @@ const NavBar = () => {
 						</a>
 					</li>
 					{navLinks.map((link, id) => (
-						<li
+						<a
 							className="relative text-white group flex items-center"
 							key={link.id}
+							href={link.href}
+							onClick={() => setIsOpen(!isOpen)}
 						>
 							{link.name}
 							<span className="absolute bottom-0 left-0 w-20 h-1 bg-gradient-to-r from-primary to-transparent rounded-md opacity-0 transform -translate-x-full group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"></span>
-						</li>
+						</a>
 					))}
 				</ul>
 				<button

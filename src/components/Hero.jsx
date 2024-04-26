@@ -4,6 +4,7 @@ import perfil from "/img/Perfil.jpg";
 import Typewriter from "typewriter-effect";
 
 const Hero = () => {
+	const whatsappNumber = "998975304"; // Tu número de WhatsApp
 	return (
 		<header className="text-white font-principal flex gap-5 max-w-5xl m-auto items-center my-20  px-5 flex-col md:flex-row">
 			<div className="relative">
@@ -11,25 +12,32 @@ const Hero = () => {
 					{/* Aplica el efecto de difuminado solo al fondo del elemento */}
 					<div className="bg-primary w-60 h-60 rounded-full blur-[100px] "></div>
 				</div>
-				<h1 className="text-4xl text-center md:text-left font-bold pb-5 relative z-10">
+				<h1 className="text-4xl text-center md:text-left font-bold pb-7 relative z-10">
 					Hi, I'm a
 					<br />
-					<Typewriter
-						options={{
-							strings: [
-								'<span style="color: #a993fe; font-size: 30px;">Front-end programer</span>',
-								'<span style="color: #a993fe; font-size: 30px;">Back-end programer</span>',
-							],
-							autoStart: true,
-							loop: true,
-						}}
-					/>
+					<div className="h-4">
+						<Typewriter
+							options={{
+								strings: [
+									'<span style="color: #a993fe; font-size: 30px;">Front-end programer</span>',
+									'<span style="color: #a993fe; font-size: 30px;">Back-end programer</span>',
+								],
+								autoStart: true,
+								loop: true,
+							}}
+						/>
+					</div>
 				</h1>
 				<p className="text-center md:text-left relative z-10">
 					Passionate Frontend Developer | Transforming ideas into seamless and
 					visually stunning Web solutions.
 				</p>
-				<button className="bg-gradient-to-r from-primary to-primary-light p-3 w-full mt-4 rounded-md uppercase font-bold relative z-10 md:w-auto md:px-20 hover:bg-none transition hover:outline hover:outline-2 hover:outline-primary hover:text-purple-300">
+				<button
+					onClick={() =>
+						(window.location.href = `https://wa.me/${whatsappNumber}`)
+					}
+					className="bg-gradient-to-r from-primary to-primary-light p-3 w-full mt-4 rounded-md uppercase font-bold relative z-10 md:w-auto md:px-20 hover:bg-none transition hover:outline hover:outline-2 hover:outline-primary hover:text-purple-300"
+				>
 					Conversa Conmigo
 				</button>
 			</div>

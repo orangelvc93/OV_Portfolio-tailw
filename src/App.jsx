@@ -1,7 +1,8 @@
 import Hero from "./components/Hero";
 import NavBar from "./components/NavBar";
-import wave from "../public/img/wave.png";
+import wave from "/img/wave.png";
 import Experience from "./components/Experience";
+import Skills from "./components/Skills";
 
 function App() {
 	return (
@@ -18,6 +19,13 @@ function App() {
 			</div>
 
 			<main>
+				<section
+					id="skills"
+					className="bg-gray-950 w-full h-auto overflow-hidden p-5 backdrop-blur"
+				>
+					<Skills />
+				</section>
+
 				<section
 					id="experiencia"
 					className="bg-slate-900 w-full h-auto overflow-hidden p-5"
